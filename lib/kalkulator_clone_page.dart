@@ -10,27 +10,27 @@ class KalkulatorClonePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController txtangka1 = TextEditingController();
-    TextEditingController txtangka2 = TextEditingController();
+    final txtangka1 = TextEditingController();
+    final txtangka2 = TextEditingController();
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Kalkulator")),
+      appBar: AppBar(title: const Text('Kalkulator')),
       body: Column(
         children: [
           MyTextField(
-            myHint: "input angka 1",
+            myHint: 'input angka 1',
             keyboardType: TextInputType.number,
             txtController: txtangka1,
             radius: 10,
-            hint: "input angka 1",
+            hint: 'input angka 1',
           ),
           MyTextField(
-            myHint: "input angka 2",
+            myHint: 'input angka 2',
             keyboardType: TextInputType.number,
             txtController: txtangka2,
             radius: 10,
-            hint: "input angka 2",
+            hint: 'input angka 2',
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -49,9 +49,8 @@ class KalkulatorClonePage extends StatelessWidget {
                     double.parse(txtangka2.text),
                   );
                 },
-                child: Text("Tambah"),
+                child: const Text('Tambah'),
               ),
-
               ElevatedButton(
                 onPressed: () {
                   if (txtangka1.text.isEmpty || txtangka2.text.isEmpty) {
@@ -67,9 +66,8 @@ class KalkulatorClonePage extends StatelessWidget {
                     double.parse(txtangka2.text),
                   );
                 },
-                child: Text("Kurang"),
+                child: const Text('Kurang'),
               ),
-
               ElevatedButton(
                 onPressed: () {
                   if (txtangka1.text.isEmpty || txtangka2.text.isEmpty) {
@@ -85,9 +83,8 @@ class KalkulatorClonePage extends StatelessWidget {
                     double.parse(txtangka2.text),
                   );
                 },
-                child: Text("Kali"),
+                child: const Text('Kali'),
               ),
-
               ElevatedButton(
                 onPressed: () {
                   if (txtangka1.text.isEmpty || txtangka2.text.isEmpty) {
@@ -103,16 +100,15 @@ class KalkulatorClonePage extends StatelessWidget {
                     double.parse(txtangka2.text),
                   );
                 },
-                child: Text("Bagi"),
+                child: const Text('Bagi'),
               ),
-
               ElevatedButton(
                 onPressed: () {
                   txtangka1.clear();
                   txtangka2.clear();
                   controller.hasilHitung.value = 0.0;
                 },
-                child: Text("Clear"),
+                child: const Text('Clear'),
               ),
             ],
           ),
@@ -121,7 +117,7 @@ class KalkulatorClonePage extends StatelessWidget {
             child: Obx(
               () => Text(
                 controller.hasilHitung.value.toString(),
-                style: TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20),
               ),
             ),
           ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/controller/list_produk_controller.dart';
 import 'package:flutter_application_2/routes.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class ListProdukPage extends StatelessWidget {
   ListProdukPage({super.key});
@@ -12,9 +11,9 @@ class ListProdukPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Daftar Produk")),
+      appBar: AppBar(title: const Text('Daftar Produk')),
       body: Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: ListView.builder(
           itemCount: controller.listProduk.length,
           itemBuilder: (context, index) {

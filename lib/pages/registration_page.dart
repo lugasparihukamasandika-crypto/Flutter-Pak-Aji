@@ -11,97 +11,85 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
-  TextEditingController txtNama = TextEditingController();
-  TextEditingController txtAlamat = TextEditingController();
-  TextEditingController txtNomerwa = TextEditingController();
-  TextEditingController txtEmail = TextEditingController();
+  final TextEditingController txtNama = TextEditingController();
+  final TextEditingController txtAlamat = TextEditingController();
+  final TextEditingController txtNomerwa = TextEditingController();
+  final TextEditingController txtEmail = TextEditingController();
 
-  String kelamin = "Laki-laki";
+  String kelamin = 'Laki-laki';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Registration"),
-      ),
+      appBar: AppBar(title: const Text('Registration')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               MyTextField(
-                myHint: "input nama?",
+                myHint: 'input nama?',
                 txtController: txtNama,
                 radius: 10,
-                hint: "input nama?",
+                hint: 'input nama?',
               ),
-
               const SizedBox(height: 10),
-
               MyTextField(
-                myHint: "alamat mu?",
+                myHint: 'alamat mu?',
                 txtController: txtAlamat,
                 radius: 10,
-                hint: "alamat mu?",
+                hint: 'alamat mu?',
               ),
-
               const SizedBox(height: 15),
-
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Jenis Kelamin",
+                  'Jenis Kelamin',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-
-              RadioListTile<String>(
-                title: Text("Laki-laki"),
-                value: "Laki-laki",
+              RadioGroup<String>(
                 groupValue: kelamin,
                 onChanged: (value) {
-                  setState(() {
-                    kelamin = value!;
-                  });
+                  if (value != null) {
+                    setState(() {
+                      kelamin = value;
+                    });
+                  }
                 },
+                child: Column(
+                  children: [
+                    RadioListTile<String>(
+                      title: const Text('Laki-laki'),
+                      value: 'Laki-laki',
+                    ),
+                    RadioListTile<String>(
+                      title: const Text('Perempuan'),
+                      value: 'Perempuan',
+                    ),
+                  ],
+                ),
               ),
-
-              RadioListTile<String>(
-                title: Text("Perempuan"),
-                value: "Perempuan",
-                groupValue: kelamin,
-                onChanged: (value) {
-                  setState(() {
-                    kelamin = value!;
-                  });
-                },
-              ),
-
               const SizedBox(height: 10),
-
               MyTextField(
-                myHint: "nomer wa mu?",
+                myHint: 'nomer wa mu?',
                 txtController: txtNomerwa,
                 radius: 10,
-                hint: "nomer wa mu?",
+                hint: 'nomer wa mu?',
                 keyboardType: TextInputType.phone,
               ),
-
               const SizedBox(height: 10),
-
               MyTextField(
-                myHint: "alamat gmail mu?",
+                myHint: 'alamat gmail mu?',
                 txtController: txtEmail,
                 radius: 10,
-                hint: "alamat gmail mu?",
+                hint: 'alamat gmail mu?',
                 keyboardType: TextInputType.emailAddress,
               ),
-
               const SizedBox(height: 20),
-
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -117,7 +105,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       },
                     );
                   },
-                  child: Text("Send"),
+                  child: const Text('Send'),
                 ),
               ),
             ],

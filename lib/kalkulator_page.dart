@@ -12,62 +12,52 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Kalkulator")),
-
+      appBar: AppBar(title: const Text('Kalkulator')),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: TextField(
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: InputDecoration(hintText: "Input Angka 1"),
+              decoration: const InputDecoration(hintText: 'Input Angka 1'),
             ),
           ),
-
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: TextField(
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: InputDecoration(hintText: "Input Angka 2"),
+              decoration: const InputDecoration(hintText: 'Input Angka 2'),
             ),
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () {},
-                child: Text("+", style: TextStyle(fontSize: 20)),
+                child: const Text('+', style: TextStyle(fontSize: 20)),
               ),
-
               ElevatedButton(
                 onPressed: () {},
-                child: Text("-", style: TextStyle(fontSize: 20)),
+                child: const Text('-', style: TextStyle(fontSize: 20)),
               ),
-
               ElevatedButton(
                 onPressed: () {},
-                child: Text("×", style: TextStyle(fontSize: 20)),
+                child: const Text('×', style: TextStyle(fontSize: 20)),
               ),
-
               ElevatedButton(
                 onPressed: () {},
-                child: Text("÷", style: TextStyle(fontSize: 20)),
+                child: const Text('÷', style: TextStyle(fontSize: 20)),
               ),
             ],
           ),
-
-          SizedBox(height: 20),
-
-          Text("Hasil", style: TextStyle(fontSize: 20)),
-
-          Text("0", style: TextStyle(fontSize: 30)),
-
+          const SizedBox(height: 20),
+          const Text('Hasil', style: TextStyle(fontSize: 20)),
+          const Text('0', style: TextStyle(fontSize: 30)),
           ElevatedButton(
             onPressed: () {},
-            child: Text("Reset", style: TextStyle(fontSize: 20)),
+            child: const Text('Reset', style: TextStyle(fontSize: 20)),
           ),
         ],
       ),
