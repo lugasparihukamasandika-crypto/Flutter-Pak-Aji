@@ -14,8 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Belajar Flutter PPLG 3',
-      debugShowCheckedModeBanner: false,
-      home: KalkulatorClonePage(),
+      initialRoute: Routes.loginClone,
       getPages: Routes.myPages,
     );
   }
