@@ -27,14 +27,17 @@ class ListProdukPage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(14),
                 onTap: () {
-                  Get.toNamed(Routes.detailProduk, arguments: {
-                    'namaProduk': produk.namaProduk,
-                    'harga': produk.harga,
-                    'deskripsi': produk.deskripsi,
-                    'gambar': produk.gambar,
-                    'rating': produk.rating,
-                    'namatoko': produk.namaToko,
-                  });
+                  Get.toNamed(
+                    Routes.detailProduk,
+                    arguments: {
+                      'namaProduk': produk.namaProduk,
+                      'harga': produk.harga,
+                      'deskripsi': produk.deskripsi,
+                      'gambar': produk.gambar,
+                      'rating': produk.rating,
+                      'namatoko': produk.namaToko,
+                    },
+                  );
                 },
                 child: ListTile(
                   title: Text(produk.namaProduk),

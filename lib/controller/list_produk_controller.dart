@@ -46,4 +46,17 @@ class ListProdukController extends GetxController {
     ),
     // dan lain lain
   ].obs;
+
+  RxList<ProdukModel> produkList = <ProdukModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    produkList.value = listProduk;
+  }
+
+  Future<void> fetchProduk() async {
+    await Future.delayed(const Duration(seconds: 2));
+    produkList.assignAll(listProduk);
+  }
 }

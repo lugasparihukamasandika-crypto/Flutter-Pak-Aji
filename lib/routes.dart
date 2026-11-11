@@ -1,5 +1,6 @@
 import 'package:flutter_application_2/kalkulator_clone_page.dart';
 import 'package:flutter_application_2/pages/confirm_registration_page.dart';
+import 'package:flutter_application_2/pages/crypto_view.dart';
 import 'package:flutter_application_2/pages/detail_produk.dart';
 import 'package:flutter_application_2/pages/list_produk_page.dart';
 import 'package:flutter_application_2/pages/main_drawer.dart';
@@ -18,6 +19,7 @@ class Routes {
   static const String mainMenu = "/mainMenu";
   static const String mainDrawer = "/mainDrawer";
   static const String loginClone = "/loginClone";
+  static const String cryptoView = "/crypto";
   // dll login , kalkulator
 
   // kita tampung kedalam array yang akan kita pasang ke main dart
@@ -30,6 +32,7 @@ class Routes {
     GetPage(name: mainMenu, page: () => MainMenuPage()),
     GetPage(name: mainDrawer, page: () => MainMenuDrawer()),
     GetPage(name: loginClone, page: () => LoginCloneFix()),
+    GetPage(name: cryptoView, page: () => CryptoView()),
     // others page here dll
   ];
 }

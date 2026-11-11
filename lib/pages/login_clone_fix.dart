@@ -46,21 +46,22 @@ class LoginCloneFix extends StatelessWidget {
             ),
           ),
 
-        Obx(() => controller.isLoading.value
-              ? Center(child: CircularProgressIndicator())
-              :  Container(
-            margin: EdgeInsets.all(10),
-            width: double.infinity,
-            height: 50,
-            child: LoginCloneButton(
-              onPressed: () {
-                controller.login();
-              },
-              text: "Log in",
-            ),
-          ),),
-         
-          
+          Obx(
+            () => controller.isLoading.value
+                ? Center(child: CircularProgressIndicator())
+                : Container(
+                    margin: EdgeInsets.all(10),
+                    width: double.infinity,
+                    height: 50,
+                    child: LoginCloneButton(
+                      onPressed: () {
+                        controller.login();
+                      },
+                      text: "Log in",
+                    ),
+                  ),
+          ),
+
           Container(
             margin: EdgeInsets.all(10),
             child: LoginCloneText(
